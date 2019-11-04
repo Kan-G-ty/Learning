@@ -14,11 +14,13 @@ class _ChangeBoxsizeState extends State<ChangeBoxsize> {
     return Scaffold(
       appBar: _buildAppBar(),
       body: _buildBody(),
-      floatingActionButton: FloatingActionButton(child: Icon(Icons.refresh),
-          onPressed: () {setState(() {
-            _width = Random().nextInt(200).toDouble();
-            _height = Random().nextInt(200).toDouble();
-          });
+      floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.refresh),
+          onPressed: () {
+            setState(() {
+              _width = Random().nextInt(200).toDouble();
+              _height = Random().nextInt(200).toDouble();
+            });
           }),
     );
   }
@@ -29,13 +31,11 @@ class _ChangeBoxsizeState extends State<ChangeBoxsize> {
 
   Widget _buildBody() {
     return Center(
-        child:
-        AnimatedContainer(
-          decoration: BoxDecoration(color: Colors.green[500]),
-          width: _width,
-          height: _height,
-          duration: Duration(milliseconds: 300),
-        )
-    );
+        child: AnimatedContainer(
+      decoration: BoxDecoration(color: Colors.green[500]),
+      width: _width,
+      height: _height,
+      duration: Duration(milliseconds: 300),
+    ));
   }
 }
