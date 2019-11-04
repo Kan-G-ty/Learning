@@ -7,7 +7,6 @@ class MyFormValid extends StatefulWidget {
 
 class _MyFormValidState extends State<MyFormValid> {
   final _formKey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,6 +20,7 @@ class _MyFormValidState extends State<MyFormValid> {
                 if (value.isEmpty) {
                   return '필수 입력 칸입니다.';
                 }
+                return null;
               },
             ),
             RaisedButton(
