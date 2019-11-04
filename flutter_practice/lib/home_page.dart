@@ -21,16 +21,22 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _buildBody() {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          _makebutton('크기 변경 애니메이션', ChangeBoxsize()),
-          _makebutton('Sliver 앱바', SliverAppbar()),
-          _makebutton('Snackbar 구현', MySnackbar()),
-          _makebutton('탭 컨트롤러', MyTabController()),
-          _makebutton('Form Validation', MyFormValid()),
-        ],
+    return SingleChildScrollView(
+      padding: EdgeInsets.all(20),
+      child: Container(
+        height: 1000,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              _makebutton('크기 변경 애니메이션', ChangeBoxsize()),
+              _makebutton('Sliver 앱바', SliverAppbar()),
+              _makebutton('Snackbar 구현', MySnackbar()),
+              _makebutton('탭 컨트롤러', MyTabController()),
+              _makebutton('Form Validation', MyFormValid()),
+            ],
+          ),
+        ),
       ),
     );
   }
