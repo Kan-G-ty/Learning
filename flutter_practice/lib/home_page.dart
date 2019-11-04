@@ -23,35 +23,23 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          CupertinoButton(
-              color: Colors.blue,
-              padding: EdgeInsets.all(10.0),
-              borderRadius: BorderRadius.circular(2),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ChangeBoxsize()));
-              },
-              child: Text('크기 변경 애니메이션')),
-          CupertinoButton(
-              color: Colors.blue,
-              padding: EdgeInsets.all(10.0),
-              borderRadius: BorderRadius.circular(2),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SliverAppbar()));
-              },
-              child: Text('Sliver 앱바')),
-          CupertinoButton(
-              color: Colors.blue,
-              padding: EdgeInsets.all(10.0),
-              borderRadius: BorderRadius.circular(2),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MySnackbar()));
-              },
-              child: Text('SnackBar 구현')),
+          AddButton('크기 변경 애니메이션', ChangeBoxsize()),
+          AddButton('Sliver 앱바', SliverAppbar()),
+          AddButton('Snackbar 구현', MySnackbar()),
         ],
       ),
     );
+  }
+
+  Widget AddButton(label, route) {
+    return CupertinoButton(
+        color: Colors.blue,
+        padding: EdgeInsets.all(10.0),
+        borderRadius: BorderRadius.circular(2),
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => route));
+        },
+        child: Text(label));
   }
 }
