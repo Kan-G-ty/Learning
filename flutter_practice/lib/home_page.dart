@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/change_boxsize.dart';
+import 'package:flutter_practice/my_form_valid.dart';
 import 'package:flutter_practice/my_tab_controller.dart';
 import 'package:flutter_practice/sliver_appbar.dart';
 import 'package:flutter_practice/snackbar_page.dart';
@@ -28,6 +29,7 @@ class _HomePageState extends State<HomePage> {
           _makebutton('Sliver 앱바', SliverAppbar()),
           _makebutton('Snackbar 구현', MySnackbar()),
           _makebutton('탭 컨트롤러', MyTabController()),
+          _makebutton('Form Validation', MyFormValid()),
         ],
       ),
     );

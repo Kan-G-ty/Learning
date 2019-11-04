@@ -6,6 +6,21 @@ class SliverAppbar extends StatefulWidget {
 }
 
 class _SliverAppbarState extends State<SliverAppbar> {
+  List _buildList(int count) {
+    List<Widget> listItems = List();
+    for (int i = 0; i < count; i++) {
+      listItems.add(Padding(
+        padding: EdgeInsets.all(20),
+        child: Text(
+          'Item ${i.toString()}',
+          style: TextStyle(color: Colors.black, fontSize: 30),
+        ),
+      ));
+    }
+
+    return listItems;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,20 +41,5 @@ class _SliverAppbarState extends State<SliverAppbar> {
         ],
       ),
     );
-  }
-
-  List _buildList(int count) {
-    List<Widget> listItems = List();
-    for (int i = 0; i < count; i++) {
-      listItems.add(Padding(
-        padding: EdgeInsets.all(20),
-        child: Text(
-          'Item ${i.toString()}',
-          style: TextStyle(color: Colors.black, fontSize: 30),
-        ),
-      ));
-    }
-
-    return listItems;
   }
 }
