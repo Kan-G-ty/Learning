@@ -21,19 +21,12 @@ class _HomePageState extends State<HomePage> {
           height: double.maxFinite,
           width: double.maxFinite,
           child: Image.network(
-            'https://cdn.clien.net/web/api/file/F01/5750413/6fde2f9518adf.jpg',
+            'https://image.fmkorea.com/files/attach/new/20180501/3655299/575797613/1038871002/f4bdc8d4675492329e6619c52e5c3bf6.jpg',
+            fit: BoxFit.cover,
           ),
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: AppBar(
-            flexibleSpace: SizedBox(
-              child: Placeholder(),
-            ),
-            title: Text('Home'),
-            backgroundColor: Colors.black.withOpacity(0),
-            elevation: 0,
-          ),
           body: _buildBody(),
         ),
       ],
@@ -41,31 +34,38 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _buildBody() {
-    return SingleChildScrollView(
-      padding: EdgeInsets.all(20),
-      child: Container(
-        color: Colors.transparent,
-        height: 1000,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              _makebutton('크기 변경 애니메이션', ChangeBoxsize()),
-              _makebutton('Sliver 앱바', SliverAppbar()),
-              _makebutton('Snackbar 구현', MySnackbar()),
-              _makebutton('탭 컨트롤러', MyTabController()),
-              _makebutton('Form Validation', MyFormValid()),
-              _makebutton('자체 계산기', MyCalc()),
-            ],
+    return CustomScrollView(
+      slivers: <Widget>[
+        SliverAppBar(
+          expandedHeight: 180,
+          elevation: 0,
+          backgroundColor: Colors.black.withOpacity(0.2),
+          flexibleSpace: FlexibleSpaceBar(
+            title: Text(
+              "Home",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            background: Opacity(
+              opacity: 0.8,
+              child: Image.network(
+                'https://pbs.twimg.com/media/EDyngsxU8AEiWgg.jpg',
+                fit: BoxFit.cover,
+                alignment: Alignment.bottomCenter,
+              ),
+            ),
           ),
         ),
-      ),
+        SliverList(
+          delegate: SliverChildBuilderDelegate((context, index) => _buildList(),
+              childCount: 1),
+        )
+      ],
     );
   }
 
   Widget _makebutton(label, route) {
     return CupertinoButton(
-        color: Colors.blue,
+        color: Colors.orange.withOpacity(0.7),
         padding: EdgeInsets.all(10.0),
         borderRadius: BorderRadius.circular(2),
         onPressed: () {
@@ -73,5 +73,25 @@ class _HomePageState extends State<HomePage> {
               context, MaterialPageRoute(builder: (context) => route));
         },
         child: Text(label));
+  }
+
+  Widget _buildList() {
+    return Container(
+      color: Colors.transparent,
+      height: 1000,
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            _makebutton('크기 변경 애니메이션', ChangeBoxsize()),
+            _makebutton('Sliver 앱바', SliverAppbar()),
+            _makebutton('Snackbar 구현', MySnackbar()),
+            _makebutton('탭 컨트롤러', MyTabController()),
+            _makebutton('Form Validation', MyFormValid()),
+            _makebutton('자체 계산기', MyCalc()),
+          ],
+        ),
+      ),
+    );
   }
 }
