@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/change_boxsize.dart';
+import 'package:flutter_practice/my_tab_controller.dart';
 import 'package:flutter_practice/sliver_appbar.dart';
 import 'package:flutter_practice/snackbar_page.dart';
 
@@ -23,15 +24,16 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          AddButton('크기 변경 애니메이션', ChangeBoxsize()),
-          AddButton('Sliver 앱바', SliverAppbar()),
-          AddButton('Snackbar 구현', MySnackbar()),
+          _makebutton('크기 변경 애니메이션', ChangeBoxsize()),
+          _makebutton('Sliver 앱바', SliverAppbar()),
+          _makebutton('Snackbar 구현', MySnackbar()),
+          _makebutton('탭 컨트롤러', MyTabController()),
         ],
       ),
     );
   }
 
-  Widget AddButton(label, route) {
+  Widget _makebutton(label, route) {
     return CupertinoButton(
         color: Colors.blue,
         padding: EdgeInsets.all(10.0),
