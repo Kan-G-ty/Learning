@@ -18,6 +18,7 @@ class _AccountPageState extends State<AccountPage> {
       actions: <Widget>[
         IconButton(
           icon: Icon(Icons.exit_to_app),
+          onPressed: () {},
         )
       ],
     );
@@ -53,6 +54,7 @@ class _AccountPageState extends State<AccountPage> {
                             height: 28,
                             child: FloatingActionButton(
                               backgroundColor: Colors.white,
+                              onPressed:() {},
                             )
                         ),
                         SizedBox(
@@ -61,6 +63,7 @@ class _AccountPageState extends State<AccountPage> {
                             child: FloatingActionButton(
                               backgroundColor: Colors.blue,
                               child: Icon(Icons.add),
+                              onPressed: () {},
                             )
                         ),
                       ],
