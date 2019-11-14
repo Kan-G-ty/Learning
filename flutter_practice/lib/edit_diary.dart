@@ -17,7 +17,7 @@ class _RemakeState extends State<Remake> {
   int originalSize = 800;
 
   Image _image = Image.network(
-    "https://file-download.jandi-box.com/18119981/2019/11/13/15736252450800c3c8483a5fe1a6e9cdce891ed643020?Expires=1573638893&Signature=PpwQKK9Bq0DDtpG3TCOUITJh1HWGJU8dWNmWjSPCnhflR0D24jHuOznDjH8XZr90OLBegDeIz3I4LhWWAXWjIapiy7EWOdmjpQjhAh84-bNSDUOsmx-JxzK6Kk4oDKS70K-OwYn3V3B7rp18L7kj5M7n~FUSNi-uxXrnAPhvPP0Htnme~UZOhq0gSUxtuXojwMjK59FoKI5J9trme7U4lN~6nZtqGPkDSSqDiTXEapg95p10MJQaNmvNaqBlkbF86TxVcfkRKvaFa5hUH~2zon3m~SRpA07o3ZsITueN~j9naM7AGdFPrNlM8UWubpd8WEjItvmSW0pNic7JgmcBGA__&Key-Pair-Id=APKAJ542KAGWCBA2SXPA",
+    "https://file-download.jandi-box.com/18119981/2019/11/13/15736252450800c3c8483a5fe1a6e9cdce891ed643020?Expires=1573697492&Signature=EE2Yj0ubJBePiuBzcCNbu9xa2tEguXw0x-WFEGnazPCkRuqPGc5etbulPCodvg2bLhLU6lfrQ6TkVncCmJOqy-bZSmWnbL~2iDgl7yQ0-gJn7ZAnOF5DxwLYC41ab7WVTGR3-P11GUJO2KG-i2u~1u9irNGDPBsO2wgBLfD5VkuKdGHOEytgDNmAy6~syXxhCNjNFl6H8iQ3l0jlYBwwjWqJtxJv59tpg8l5FrCpyq54c4AXTSaN16X4juU91t65XkzcfqNezOLRLfXQEi5A7apBXx0cFdkoHZmDgrzhW9taqk4XYR7xQCtJTTl6TyjVdslGc~lzlB3doJxM6MK02Q__&Key-Pair-Id=APKAJ542KAGWCBA2SXPA",
   );
   Image _image2;
 
