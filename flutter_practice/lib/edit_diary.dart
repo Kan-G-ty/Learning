@@ -16,9 +16,7 @@ class _RemakeState extends State<Remake> {
   GlobalKey previewContainer = new GlobalKey();
   int originalSize = 800;
 
-  Image _image = Image.asset(
-    "lib/img/diary.png",
-  );
+  Image _image = Image.asset("lib/img/diary.png");
   Image _image2;
 
   @override

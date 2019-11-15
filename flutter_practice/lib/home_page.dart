@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/animated_listview.dart';
 import 'package:flutter_practice/change_boxsize.dart';
 import 'package:flutter_practice/edit_diary.dart';
-import 'package:flutter_practice/my_calc.dart';
 import 'package:flutter_practice/my_form_valid.dart';
 import 'package:flutter_practice/my_tab_controller.dart';
 import 'package:flutter_practice/sliver_appbar.dart';
@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
             _makebutton('Snackbar 구현', MySnackbar()),
             _makebutton('탭 컨트롤러', MyTabController()),
             _makebutton('Form Validation', MyFormValid()),
-            _makebutton('자체 계산기', MyCalc()),
+            _makebutton('Animated', Animated()),
             _makebutton('다이어리 테스트', Remake()),
           ],
         ),
