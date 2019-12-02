@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_practice/animated_listview.dart';
 import 'package:flutter_practice/change_boxsize.dart';
 import 'package:flutter_practice/edit_diary.dart';
+import 'package:flutter_practice/flip_card.dart';
 import 'package:flutter_practice/my_form_valid.dart';
 import 'package:flutter_practice/my_tab_controller.dart';
 import 'package:flutter_practice/sliver_appbar.dart';
@@ -91,6 +92,7 @@ class _HomePageState extends State<HomePage> {
             _makebutton('Form Validation', MyFormValid()),
             _makebutton('Animated', Animated()),
             _makebutton('다이어리 테스트', Remake()),
+            _makebutton('플립 카드 테스트', FlipCardPage()),
           ],
         ),
       ),
