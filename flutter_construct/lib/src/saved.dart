@@ -1,6 +1,8 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
+import 'bloc/bloc.dart';
+
 class SavedList extends StatefulWidget {
   SavedList({@required this.saved});
 
@@ -13,6 +15,7 @@ class SavedList extends StatefulWidget {
 class _SavedListState extends State<SavedList> {
   @override
   Widget build(BuildContext context) {
+    bloc.saved;
     return Scaffold(appBar: AppBar(title: Text('Saved')), body: _buildBody());
   }
 

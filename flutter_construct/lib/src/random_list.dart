@@ -1,6 +1,7 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_construct/src/saved.dart';
+import 'bloc/bloc.dart';
 
 class RandomList extends StatefulWidget {
   @override
@@ -10,6 +11,7 @@ class RandomList extends StatefulWidget {
 class _RandomListState extends State<RandomList> {
   final List<WordPair> _suggestions = <WordPair>[];
   final Set<WordPair> _saved = Set<WordPair>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
