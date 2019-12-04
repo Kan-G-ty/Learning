@@ -9,42 +9,34 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: ChangeNotifierProvider<Counter>(
-          create: (context) {
-            return Counter();
-          },
-          child: MyHomePage(title: 'Flutter Demo Home Page')),
-    );
+    return ChangeNotifierProvider<Counter>(
+        create: (context) {
+          return Counter();
+        },
+        child: MaterialApp(
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+          ),
+          home: MyHomePage(title: 'Flutter Demo Home Page'),
+        ));
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatelessWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
   final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int count;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(title),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.format_quote),
             onPressed: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => ShowCounter(count))),
+                MaterialPageRoute(builder: (context) => ShowCounter())),
           )
         ],
       ),
@@ -65,7 +57,6 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('up'),
               onPressed: () {
                 Provider.of<Counter>(context).incrementCount();
-                count = Provider.of<Counter>(context).getCount();
               },
             )
           ],
@@ -74,7 +65,6 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Provider.of<Counter>(context, listen: false).incrementCount();
-          count = Provider.of<Counter>(context).getCount();
         },
         tooltip: 'Increment',
         child: Icon(Icons.add),

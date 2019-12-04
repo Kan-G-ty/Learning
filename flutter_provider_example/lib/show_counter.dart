@@ -1,19 +1,26 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'counter.dart';
 
 class ShowCounter extends StatelessWidget {
-  final int _count;
-  ShowCounter(this._count);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text('confirm')), body: _buildBody());
-  }
+    var bloc = Provider.of<Counter>(context);
 
-  Widget _buildBody() {
-    return Center(
-      child: Text(_count.toString()),
-    );
+    return Scaffold(
+        appBar: AppBar(title: Text('confirm')),
+        body: Center(
+          child: Column(
+            children: <Widget>[
+              Text(bloc.getCount().toString()),
+              CupertinoButton(
+                child: Icon(Icons.restore_page),
+                onPressed: () => bloc.resetCount(),
+              )
+            ],
+          ),
+        ));
   }
 }
